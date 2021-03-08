@@ -1,0 +1,32 @@
+[Unit]
+Description=Kubernetes Controller Manager
+Documentation=https://github.com/kubernetes/kubernetes
+
+[Service]
+ExecStart=/usr/local/bin/kube-controller-manager \
+  --bind-address=0.0.0.0 \
+  --allocate-node-cidrs=true \
+  --cluster-cidr=10.244.0.0/16 \
+  --cluster-name=kubernetes \
+  --cluster-signing-cert-file=/var/lib/kubernetes/kubernetes-ca.pem \
+  --cluster-signing-key-file=/var/lib/kubernetes/kubernetes-ca-key.pem \
+  --kubeconfig=/var/lib/kubernetes/kube-controller-manager.kubeconfig \
+  --leader-elect=true \
+  --leader-elect-lease-duration=6s \
+  --leader-elect-renew-deadline=3s \
+  --leader-elect-resource-lock=leases \
+  --leader-elect-resource-name=kube-controller-manager \
+  --leader-elect-resource-namespace=kube-system \
+  --leader-elect-retry-period=2s \
+  --client-ca-file=/var/lib/kubernetes/kubernetes-ca.pem \
+  --root-ca-file=/var/lib/kubernetes/kubernetes-ca.pem \
+  --requestheader-client-ca-file=/var/lib/kubernetes/kubernetes-front-proxy-ca.pem \
+  --service-account-private-key-file=/var/lib/kubernetes/service-account-key.pem \
+  --service-cluster-ip-range=10.32.0.0/24 \
+  --use-service-account-credentials=true \
+  --v=2
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

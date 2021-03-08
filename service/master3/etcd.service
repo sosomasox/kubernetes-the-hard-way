@@ -1,0 +1,30 @@
+[Unit]
+Description=etcd
+Documentation=https://etcd.io/docs/
+
+[Service]
+Type=notify
+ExecStart=/usr/local/bin/etcd \
+  --name etcd-k8s-master3 \
+  --cert-file=/etc/etcd/kube-etcd.pem \
+  --key-file=/etc/etcd/kube-etcd-key.pem \
+  --peer-cert-file=/etc/etcd/kube-etcd-peer.pem \
+  --peer-key-file=/etc/etcd/kube-etcd-peer-key.pem \
+  --trusted-ca-file=/etc/etcd/etcd-ca.pem \
+  --peer-trusted-ca-file=/etc/etcd/etcd-ca.pem \
+  --peer-client-cert-auth \
+  --client-cert-auth \
+  --initial-advertise-peer-urls https://172.29.156.13:2380 \
+  --listen-peer-urls https://172.29.156.13:2380 \
+  --listen-client-urls https://172.29.156.13:2379,https://127.0.0.1:2379 \
+  --advertise-client-urls https://172.29.156.13:2379 \
+  --initial-cluster-token etcd-k8s \
+  --initial-cluster etcd-k8s-master1=https://172.29.156.11:2380,etcd-k8s-master2=https://172.29.156.12:2380,etcd-k8s-master3=https://172.29.156.13:2380 \
+  --initial-cluster-state new \
+  --data-dir=/var/lib/etcd
+Restart=on-failure
+RestartSec=5
+Environment=ETCD_UNSUPPORTED_ARCH=arm64
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,25 @@
+{
+  "signing": {
+    "default": {
+      "expiry": "43800h"
+    },
+    "profiles": {
+      "etcd": {
+        "usages": ["digital signature", "key encipherment", "server auth", "client auth"],
+        "expiry": "43800h"
+      },
+      "kubernetes": {
+        "usages": ["digital signature", "key encipherment", "server auth", "client auth"],
+        "expiry": "43800h"
+      },
+      "kubernetes-front-proxy": {
+        "usages": ["digital signature", "key encipherment", "server auth", "client auth"],
+        "expiry": "43800h"
+      },
+      "service-account": {
+        "usages": ["digital signature", "key encipherment", "server auth", "client auth"],
+        "expiry": "43800h"
+      }
+    }
+  }
+}

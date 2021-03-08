@@ -1,0 +1,16 @@
+{
+  "CN": "kube-apiserver-m1",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "C": "JP",
+      "L": "Niigata",
+      "O": "Kubernetes",
+      "OU": "Raspi-k8s",
+      "ST": "Niigata"
+    }
+  ]
+}
