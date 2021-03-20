@@ -19,13 +19,14 @@ EOF
 sudo sysctl --system
 
 sudo mkdir -p \
-  /etc/cni/net.d \
-  /opt/cni/bin \
-  /var/lib/kubelet \
-  /var/lib/kube-proxy \
-  /var/lib/kubernetes \
-  /etc/containerd \
-  /etc/etcd
+    /etc/cni/net.d/ \
+    /etc/containerd/ \
+    /etc/etcd/ \
+    /opt/cni/bin/ \
+    /var/lib/kubelet/ \
+    /var/lib/kube-proxy/ \
+    /var/lib/kubernetes/ 
+
 
 wget -q --show-progress --https-only --timestamping \
   https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.20.0/crictl-v1.20.0-linux-arm64.tar.gz \
@@ -101,7 +102,9 @@ sudo systemctl enable kubelet kube-proxy flanneld
 sudo systemctl restart kubelet
 sudo systemctl restart kube-proxy
 
-sudo mv 10-flannel.conflist /etc/cni/net.d/
+sudo mv \
+    10-flannel.conflist \
+    /etc/cni/net.d/
 
 sudo systemctl enable flanneld
 

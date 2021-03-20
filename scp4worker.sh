@@ -12,7 +12,8 @@ WORKER5_HOSTNAME=k8s-worker5
 
 for instance in ${MASTER1_HOSTNAME} ${MASTER2_HOSTNAME} ${MASTER3_HOSTNAME} ${WORKER1_HOSTNAME} ${WORKER2_HOSTNAME} ${WORKER3_HOSTNAME} ${WORKER4_HOSTNAME} ${WORKER5_HOSTNAME}; do
     scp \
-        install_kuberneres_for_worker.sh.sh \
+        install_kuberneres_for_worker.sh \
+        uninstall_kuberneres_for_worker.sh \
         containerd/config.toml \
         cert/kubernetes-ca.pem \
         cert/${instance}.pem \

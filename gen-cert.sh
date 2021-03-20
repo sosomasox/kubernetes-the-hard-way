@@ -48,7 +48,7 @@ cfssl gencert \
     -ca-key=etcd-ca-key.pem \
     -config=../config/etcd-ca-config.json \
     -profile=peer \
-    -hostname=${MASTER1_HOSTNAME},${MASTER2_HOSTNAME},${MASTER3_HOSTNAME},${MASTER1_ADDRESS},${MASTER2_ADDRESS},${MASTER3_ADDRESS},localhost,127.0.0.1 \
+    -hostname="${MASTER1_HOSTNAME},${MASTER2_HOSTNAME},${MASTER3_HOSTNAME},${MASTER1_ADDRESS},${MASTER2_ADDRESS},${MASTER3_ADDRESS},localhost,127.0.0.1" \
     ../config/kube-etcd-k8s-master1-csr.json | cfssljson -bare kube-etcd-k8s-master1
 
 cfssl gencert \
@@ -56,7 +56,7 @@ cfssl gencert \
     -ca-key=etcd-ca-key.pem \
     -config=../config/etcd-ca-config.json \
     -profile=peer \
-    -hostname=${MASTER1_HOSTNAME},${MASTER2_HOSTNAME},${MASTER3_HOSTNAME},${MASTER1_ADDRESS},${MASTER2_ADDRESS},${MASTER3_ADDRESS},localhost,127.0.0.1 \
+    -hostname="${MASTER1_HOSTNAME},${MASTER2_HOSTNAME},${MASTER3_HOSTNAME},${MASTER1_ADDRESS},${MASTER2_ADDRESS},${MASTER3_ADDRESS},localhost,127.0.0.1" \
     ../config/kube-etcd-k8s-master2-csr.json | cfssljson -bare kube-etcd-k8s-master2
 
 cfssl gencert \
@@ -64,7 +64,7 @@ cfssl gencert \
     -ca-key=etcd-ca-key.pem \
     -config=../config/etcd-ca-config.json \
     -profile=peer \
-    -hostname=${MASTER1_HOSTNAME},${MASTER2_HOSTNAME},${MASTER3_HOSTNAME},${MASTER1_ADDRESS},${MASTER2_ADDRESS},${MASTER3_ADDRESS},localhost,127.0.0.1 \
+    -hostname="${MASTER1_HOSTNAME},${MASTER2_HOSTNAME},${MASTER3_HOSTNAME},${MASTER1_ADDRESS},${MASTER2_ADDRESS},${MASTER3_ADDRESS},localhost,127.0.0.1" \
     ../config/kube-etcd-k8s-master3-csr.json | cfssljson -bare kube-etcd-k8s-master3
 
 
@@ -74,7 +74,7 @@ cfssl gencert \
     -ca-key=etcd-ca-key.pem \
     -config=../config/etcd-ca-config.json \
     -profile=peer \
-    -hostname=${MASTER1_HOSTNAME},${MASTER2_HOSTNAME},${MASTER3_HOSTNAME},${MASTER1_ADDRESS},${MASTER2_ADDRESS},${MASTER3_ADDRESS},localhost,127.0.0.1 \
+    -hostname="${MASTER1_HOSTNAME},${MASTER2_HOSTNAME},${MASTER3_HOSTNAME},${MASTER1_ADDRESS},${MASTER2_ADDRESS},${MASTER3_ADDRESS},localhost,127.0.0.1" \
     ../config/kube-etcd-peer-k8s-master1-csr.json | cfssljson -bare kube-etcd-peer-k8s-master1
 
 cfssl gencert \
@@ -82,7 +82,7 @@ cfssl gencert \
     -ca-key=etcd-ca-key.pem  \
     -config=../config/etcd-ca-config.json \
     -profile=peer \
-    -hostname=${MASTER1_HOSTNAME},${MASTER2_HOSTNAME},${MASTER3_HOSTNAME},${MASTER1_ADDRESS},${MASTER2_ADDRESS},${MASTER3_ADDRESS},localhost,127.0.0.1 \
+    -hostname="${MASTER1_HOSTNAME},${MASTER2_HOSTNAME},${MASTER3_HOSTNAME},${MASTER1_ADDRESS},${MASTER2_ADDRESS},${MASTER3_ADDRESS},localhost,127.0.0.1" \
     ../config/kube-etcd-peer-k8s-master2-csr.json | cfssljson -bare kube-etcd-peer-k8s-master2
 
 cfssl gencert \
@@ -90,7 +90,7 @@ cfssl gencert \
     -ca-key=etcd-ca-key.pem \
     -config=../config/etcd-ca-config.json \
     -profile=peer \
-    -hostname=${MASTER1_HOSTNAME},${MASTER2_HOSTNAME},${MASTER3_HOSTNAME},${MASTER1_ADDRESS},${MASTER2_ADDRESS},${MASTER3_ADDRESS},localhost,127.0.0.1 \
+    -hostname="${MASTER1_HOSTNAME},${MASTER2_HOSTNAME},${MASTER3_HOSTNAME},${MASTER1_ADDRESS},${MASTER2_ADDRESS},${MASTER3_ADDRESS},localhost,127.0.0.1" \
     ../config/kube-etcd-peer-k8s-master3-csr.json | cfssljson -bare kube-etcd-peer-k8s-master3
 
 
@@ -136,7 +136,7 @@ cfssl gencert \
     -ca-key=kubernetes-ca-key.pem \
     -config=../config/kubernetes-ca-config.json \
     -profile=server \
-    -hostname=${MASTER1_HOSTNAME},${MASTER2_HOSTNAME},${MASTER3_HOSTNAME},${WORKER1_HOSTNAME},${WORKER2_HOSTNAME},${WORKER3_HOSTNAME},${WORKER4_HOSTNAME},${WORKER5_HOSTNAME},${MASTER1_ADDRESS},${MASTER2_ADDRESS},${MASTER3_ADDRESS},${WORKER1_ADDRESS},${WORKER2_ADDRESS},${WORKER3_ADDRESS},${WORKER4_ADDRESS},${WORKER5_ADDRESS},${LOADBALANCER_ADDRESS},${KUBERNETES_SVC_ADDRESS},${KUBERNETES_HOSTNAMES},localhost,127.0.0.1 \
+    -hostname="${MASTER1_HOSTNAME},${MASTER2_HOSTNAME},${MASTER3_HOSTNAME},${WORKER1_HOSTNAME},${WORKER2_HOSTNAME},${WORKER3_HOSTNAME},${WORKER4_HOSTNAME},${WORKER5_HOSTNAME},${MASTER1_ADDRESS},${MASTER2_ADDRESS},${MASTER3_ADDRESS},${WORKER1_ADDRESS},${WORKER2_ADDRESS},${WORKER3_ADDRESS},${WORKER4_ADDRESS},${WORKER5_ADDRESS},${LOADBALANCER_ADDRESS},${KUBERNETES_SVC_ADDRESS},${KUBERNETES_HOSTNAMES},localhost,127.0.0.1" \
     ../config/kube-apiserver-k8s-master1-csr.json | cfssljson -bare kube-apiserver-k8s-master1
 
 cfssl gencert \
@@ -144,7 +144,7 @@ cfssl gencert \
     -ca-key=kubernetes-ca-key.pem \
     -config=../config/kubernetes-ca-config.json \
     -profile=server \
-    -hostname=${MASTER1_HOSTNAME},${MASTER2_HOSTNAME},${MASTER3_HOSTNAME},${WORKER1_HOSTNAME},${WORKER2_HOSTNAME},${WORKER3_HOSTNAME},${WORKER4_HOSTNAME},${WORKER5_HOSTNAME},${MASTER1_ADDRESS},${MASTER2_ADDRESS},${MASTER3_ADDRESS},${WORKER1_ADDRESS},${WORKER2_ADDRESS},${WORKER3_ADDRESS},${WORKER4_ADDRESS},${WORKER5_ADDRESS},${LOADBALANCER_ADDRESS},${KUBERNETES_SVC_ADDRESS},${KUBERNETES_HOSTNAMES},localhost,127.0.0.1 \
+    -hostname="${MASTER1_HOSTNAME},${MASTER2_HOSTNAME},${MASTER3_HOSTNAME},${WORKER1_HOSTNAME},${WORKER2_HOSTNAME},${WORKER3_HOSTNAME},${WORKER4_HOSTNAME},${WORKER5_HOSTNAME},${MASTER1_ADDRESS},${MASTER2_ADDRESS},${MASTER3_ADDRESS},${WORKER1_ADDRESS},${WORKER2_ADDRESS},${WORKER3_ADDRESS},${WORKER4_ADDRESS},${WORKER5_ADDRESS},${LOADBALANCER_ADDRESS},${KUBERNETES_SVC_ADDRESS},${KUBERNETES_HOSTNAMES},localhost,127.0.0.1" \
     ../config/kube-apiserver-k8s-master2-csr.json | cfssljson -bare kube-apiserver-k8s-master2
 
 cfssl gencert \
@@ -152,7 +152,7 @@ cfssl gencert \
     -ca-key=kubernetes-ca-key.pem \
     -config=../config/kubernetes-ca-config.json \
     -profile=server \
-    -hostname=${MASTER1_HOSTNAME},${MASTER2_HOSTNAME},${MASTER3_HOSTNAME},${WORKER1_HOSTNAME},${WORKER2_HOSTNAME},${WORKER3_HOSTNAME},${WORKER4_HOSTNAME},${WORKER5_HOSTNAME},${MASTER1_ADDRESS},${MASTER2_ADDRESS},${MASTER3_ADDRESS},${WORKER1_ADDRESS},${WORKER2_ADDRESS},${WORKER3_ADDRESS},${WORKER4_ADDRESS},${WORKER5_ADDRESS},${LOADBALANCER_ADDRESS},${KUBERNETES_SVC_ADDRESS},${KUBERNETES_HOSTNAMES},localhost,127.0.0.1 \
+    -hostname="${MASTER1_HOSTNAME},${MASTER2_HOSTNAME},${MASTER3_HOSTNAME},${WORKER1_HOSTNAME},${WORKER2_HOSTNAME},${WORKER3_HOSTNAME},${WORKER4_HOSTNAME},${WORKER5_HOSTNAME},${MASTER1_ADDRESS},${MASTER2_ADDRESS},${MASTER3_ADDRESS},${WORKER1_ADDRESS},${WORKER2_ADDRESS},${WORKER3_ADDRESS},${WORKER4_ADDRESS},${WORKER5_ADDRESS},${LOADBALANCER_ADDRESS},${KUBERNETES_SVC_ADDRESS},${KUBERNETES_HOSTNAMES},localhost,127.0.0.1" \
     ../config/kube-apiserver-k8s-master3-csr.json | cfssljson -bare kube-apiserver-k8s-master3
 
 
@@ -162,7 +162,7 @@ cfssl gencert \
     -ca-key=kubernetes-ca-key.pem \
     -config=../config/kubernetes-ca-config.json \
     -profile=client \
-    -hostname=${WORKER1_HOSTNAME},${WORKER2_HOSTNAME},${WORKER3_HOSTNAME},${WORKER4_HOSTNAME},${WORKER5_HOSTNAME},${WORKER1_ADDRESS},${WORKER2_ADDRESS},${WORKER3_ADDRESS},${WORKER4_ADDRESS},${WORKER5_ADDRESS}, \
+    -hostname="${WORKER1_HOSTNAME},${WORKER2_HOSTNAME},${WORKER3_HOSTNAME},${WORKER4_HOSTNAME},${WORKER5_HOSTNAME},${WORKER1_ADDRESS},${WORKER2_ADDRESS},${WORKER3_ADDRESS},${WORKER4_ADDRESS},${WORKER5_ADDRESS}" \
     ../config/kube-apiserver-kubelet-client-csr.json | cfssljson -bare kube-apiserver-kubelet-client
 
 
