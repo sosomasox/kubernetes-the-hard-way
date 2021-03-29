@@ -47,13 +47,13 @@ sudo apt -y install containerd=1.3.3-0ubuntu2.3 runc=1.0.0~rc10-0ubuntu1
 
 
 wget -q --show-progress --https-only --timestamping \
-    https://storage.googleapis.com/kubernetes-release/release/${KUBERNETES_VERSIO}/bin/linux/arm64/kubelet
+    https://storage.googleapis.com/kubernetes-release/release/${KUBERNETES_VERSION}/bin/linux/arm64/kubelet
 chmod +x kubelet
 sudo mv kubelet /usr/local/bin/
 
 
 wget -q --show-progress --https-only --timestamping \
-   https://storage.googleapis.com/kubernetes-release/release/${KUBERNETES_VERSIO}/bin/linux/arm64/kube-proxy
+   https://storage.googleapis.com/kubernetes-release/release/${KUBERNETES_VERSION}/bin/linux/arm64/kube-proxy
 chmod +x kube-proxy
 sudo mv kube-proxy /usr/local/bin/
 
