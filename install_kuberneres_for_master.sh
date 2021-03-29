@@ -111,15 +111,15 @@ sudo systemctl daemon-reload
 
 
 sudo systemctl enable \
-    etcd \
-    kube-apiserver \
+    etcd.service \
+    kube-apiserver.service \
     kube-controller-manager.service \
     kube-scheduler.service
 
 
 sudo systemctl restart \
-    etcd \
-    kube-apiserver \
+    etcd.service \
+    kube-apiserver.service \
     kube-controller-manager.service \
     kube-scheduler.service
 
