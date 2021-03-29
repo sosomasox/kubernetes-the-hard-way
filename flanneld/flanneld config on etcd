@@ -1,2 +1,1 @@
-curl --key /etc/etcd/kube-etcd-healthcheck-client-key.pem --cert /etc/etcd/kube-etcd-healthcheck-client.pem --cacert /etc/etcd//etcd-ca.pem https://127.0.0.1:2379/v2/keys/coreos.com/network/config -XPUT -d value='{ "Network": "10.244.0.0/16", "Backend": {"Type": "vxlan"}}'
-
+curl --cacert /etc/etcd/etcd-ca.pem https://127.0.0.1:2379/v2/keys/coreos.com/network/config --cert /etc/etcd/kube-etcd-flanneld-client.pem --key /etc/etcd/kube-etcd-flanneld-client-key.pem -XPUT -d value='{ "Network": "10.244.0.0/16", "Backend": {"Type": "vxlan"}}'
