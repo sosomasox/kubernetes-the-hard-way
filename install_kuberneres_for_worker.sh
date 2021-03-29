@@ -97,19 +97,23 @@ sudo mv \
 
 sudo systemctl daemon-reload
 
-sudo systemctl enable kubelet kube-proxy flanneld
+sudo systemctl enable \
+    kubelet.service \
+    kube-proxy.service \
+    flanneld.service
 
-sudo systemctl restart kubelet
-sudo systemctl restart kube-proxy
+sudo systemctl restart  \
+    kubelet.service \
+    kube-proxy.service \
+    flanneld.service
 
 sudo mv \
     10-flannel.conflist \
     /etc/cni/net.d/
 
-sudo systemctl enable flanneld
+sudo systemctl enable flanneld.service
 
-sudo systemctl restart flanneld
-
+sudo systemctl restart flanneld.service
 
 
 exit 0
