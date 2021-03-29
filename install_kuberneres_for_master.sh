@@ -11,7 +11,7 @@ DOWNLOAD_URL=${GOOGLE_URL}
 rm -f /tmp/etcd-${ETCD_VER}-linux-arm64.tar.gz
 rm -rf /tmp/etcd-download-test && mkdir -p /tmp/etcd-download-test
 
-wget -q --show-progress --https-only --timestamping  ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-arm64.tar.gz
+wget -q --show-progress --https-only --timestamping ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-arm64.tar.gz
 tar xzvf etcd-${ETCD_VER}-linux-arm64.tar.gz
 sudo mv etcd-${ETCD_VER}-linux-arm64/etcd* /usr/local/bin/
 
