@@ -6,6 +6,7 @@ sudo systemctl stop \
     kube-proxy \
     flanneld
 
+
 for pod in $(sudo sh -c "ls /var/lib/kubelet/pods/"); do
     echo ${pod}
     for kubernetes_io in $(sudo sh -c "ls /var/lib/kubelet/pods/${pod}/volumes/"); do
@@ -49,6 +50,9 @@ sudo rm -rf \
 
 sudo systemctl daemon-reload
 
+
 sudo apt remove --purge -y containerd runc
+sudo apt remove --purge socat conntrack ipset
+
 
 exit 0
