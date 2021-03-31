@@ -29,6 +29,7 @@ for instance in ${MASTER1_HOSTNAME} ${MASTER2_HOSTNAME} ${MASTER3_HOSTNAME} ${WO
         cert/kube-etcd-flanneld-client.pem \
         cert/kube-etcd-flanneld-client-key.pem \
         cert/etcd-ca.pem \
+        cert/kubernetes-front-proxy-ca.pem
         ubuntu@${instance}:/home/ubuntu
 done
 
