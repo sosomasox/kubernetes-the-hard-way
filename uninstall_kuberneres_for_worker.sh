@@ -52,7 +52,7 @@ sudo systemctl daemon-reload
 
 
 sudo apt remove --purge -y containerd runc
-sudo apt remove --purge socat conntrack ipset
+sudo apt remove --purge -y socat conntrack ipset
 
 
 exit 0
