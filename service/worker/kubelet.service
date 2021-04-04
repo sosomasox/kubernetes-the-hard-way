@@ -12,6 +12,7 @@ ExecStart=/usr/local/bin/kubelet \
   --image-pull-progress-deadline=3m \
   --kubeconfig=/var/lib/kubelet/kubeconfig \
   --register-node=true \
+  --root-dir=/var/lib/kubelet \
   --v=2
 Restart=on-failure
 RestartSec=5
