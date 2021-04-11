@@ -5,5 +5,6 @@ kubectl label node `hostname` node-role.kubernetes.io/controlplane=''
 kubectl label node `hostname` node-role.kubernetes.io/etcd=''
 kubectl taint node `hostname` node-role.kubernetes.io/master=:NoSchedule
 kubectl taint node `hostname` node-role.kubernetes.io/controlplane=:NoSchedule
-kubectl taint node `hostname` node-role.kubernetes.io/etcd=:NoExecute
+kubectl taint node `hostname` node-role.kubernetes.io/etcd=:NoSchedule
+
 exit 0
