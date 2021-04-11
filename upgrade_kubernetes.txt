@@ -1,0 +1,34 @@
+kubectl drain --ignore-daemonsets k8s-master1
+sudo sh upgrade_kuberneres_for_worker.sh
+sudo sh upgrade_kuberneres_for_master.sh
+kubectl uncordon k8s-master1
+
+kubectl drain --ignore-daemonsets k8s-master2
+sudo sh upgrade_kuberneres_for_worker.sh
+sudo sh upgrade_kuberneres_for_master.sh
+kubectl uncordon k8s-master2
+
+kubectl drain --ignore-daemonsets k8s-master3
+sudo sh upgrade_kuberneres_for_worker.sh
+sudo sh upgrade_kuberneres_for_master.sh
+kubectl uncordon k8s-master3
+
+kubectl drain --ignore-daemonsets k8s-worker1
+sudo sh upgrade_kuberneres_for_worker.sh
+kubectl uncordon k8s-worker1
+
+kubectl drain --ignore-daemonsets k8s-worker2
+sudo sh upgrade_kuberneres_for_worker.sh
+kubectl uncordon k8s-worker2
+
+kubectl drain --ignore-daemonsets k8s-worker3
+sudo sh upgrade_kuberneres_for_worker.sh
+kubectl uncordon k8s-worker3
+
+kubectl drain --ignore-daemonsets k8s-worker4
+sudo sh upgrade_kuberneres_for_worker.sh
+kubectl uncordon k8s-worker4
+
+kubectl drain --ignore-daemonsets k8s-worker5
+sudo sh upgrade_kuberneres_for_worker.sh
+kubectl uncordon k8s-worker5
