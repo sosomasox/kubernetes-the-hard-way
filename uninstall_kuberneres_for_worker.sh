@@ -6,28 +6,6 @@ sudo systemctl stop \
     kube-proxy \
     flanneld
 
-
-for pod in $(sudo sh -c "ls /var/lib/kubelet/pods/"); do
-    echo ${pod}
-    for kubernetes_io in $(sudo sh -c "ls /var/lib/kubelet/pods/${pod}/volumes/"); do
-    echo ${kubernetes_io}
-        for target in $(sudo sh -c "/var/lib/kubelet/pods/${pod}/volumes/${kubernetes_io}/"); do
-            #echo ${target}
-            sudo umount /var/lib/kubelet/pods/${pod}/volumes/${kubernetes_io}/${target}
-        done
-    done
-done
-
-
-for pod in $(sudo sh -c "ls /var/lib/kubelet/pods/"); do
-    echo ${pod}
-    for kubernetes_io in $(sudo sh -c "ls /var/lib/kubelet/pods/${pod}/volumes/"); do
-    echo ${kubernetes_io}
-        sudo umount -R /var/lib/kubelet/pods/${pod}/volumes/${kubernetes_io}
-    done
-done
-
-
 sudo rm -rf \
     /etc/cni/net.d/ \
     /etc/containerd/ \
